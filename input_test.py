@@ -1,15 +1,12 @@
-a = 1
-b = 2
 
-a = ''
-if a:
-    A = 1
+class Non_Exp(Exception):
+    def __init__(self):
+        pass
 
-A = 1
-if A:
-    print(A)
+def dd():
+    raise Non_Exp()
 
 try:
-    raise ValueError('zxc')
-except ValueError as e:
-    e.
+    dd()
+except ValueError:
+    print('asd')

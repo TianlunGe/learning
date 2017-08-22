@@ -2,8 +2,8 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QTabWidget
 
-# from pyqt_test.gui_test import *
-from pyqt_test.result_test import *
+from pyqt_test.gui_test import *
+# from pyqt_test.result_test import *
 
 import pandas as pd
 
@@ -15,10 +15,11 @@ if __name__ == '__main__':
     # d = pd.DataFrame([1,2,3])
     # # w = pd.ExcelWriter('asd.xls')
     # d.to_excel('asd.xls')
+    # df.to_excel('asd.xlsx')
 
     app = QApplication(sys.argv)
     mainWindow = QTabWidget()
-    ui = Ui_TabWidget(df)
+    ui = Ui_Dialog()
     ui.setupUi(mainWindow)
     mainWindow.show()
     sys.exit(app.exec_())

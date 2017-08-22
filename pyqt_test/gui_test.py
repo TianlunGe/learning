@@ -8,9 +8,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDateTime
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QInputDialog, QLineEdit
 
-class Ui_Dialog(object):
+
+class Ui_Dialog(QtWidgets.QWidget):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(640, 480)
@@ -166,13 +167,14 @@ class Ui_Dialog(object):
 
     def accept(self):
         print('accept')
-        fileName2, ok2 = QFileDialog.getSaveFileName(self,"文件保存",
-                                                     "C:/")
-        print(fileName2)
-        print(ok2)
+        # fileName2, ok2 = QFileDialog.getSaveFileName(directory='C:\\Users\\admin\\Desktop', filter='*.xls;;*.csv')
+        # print(fileName2)
+        # print(ok2)
         # print(self.symbol.text())
         # print(self.start_time.dateTime().toPyDateTime())
         # print(self.data_type_day.isChecked())
+        description, _ = QInputDialog.getText(self, "输入", "保存项目描述：", QLineEdit.Normal, "请输入描述")
+
 
     def reject(self):
         pass
